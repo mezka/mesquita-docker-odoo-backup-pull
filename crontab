@@ -1,0 +1,2 @@
+# Min Hora Día Mes DíaSem  Comando
+30 23 * * * /app/pull.sh >>/var/log/pull.log 2>&1

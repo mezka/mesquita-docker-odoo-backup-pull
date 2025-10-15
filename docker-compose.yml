@@ -1,0 +1,11 @@
+services:
+  puller:
+    build: .
+    container_name: mesquita-docker-odoo-backup-pull
+    env_file: .env
+    environment:
+      - SSH_AUTH_SOCK=/ssh-agent
+    volumes:
+      - ./backups:/backups
+      - $SSH_AUTH_SOCK:/ssh-agent
+    restart: unless-stopped
