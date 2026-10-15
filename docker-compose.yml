@@ -7,5 +7,5 @@ services:
       - SSH_AUTH_SOCK=/ssh-agent
     volumes:
       - ./backups:/backups
-      - $SSH_AUTH_SOCK:/ssh-agent
+      - ${SSH_AUTH_SOCK:-/dev/null}:/ssh-agent
     restart: unless-stopped
